@@ -11,7 +11,7 @@ export class AppComponent {
   specificName = '';
   initialValue = 'World';
 
-  keyupHandler(event: KeyboardEvent, name: string): void {
+  clickHandler(event: KeyboardEvent, name: string): void {
     console.log(event);
     this.specificName = name;
   }

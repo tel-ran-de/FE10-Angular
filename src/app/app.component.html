@@ -1,5 +1,3 @@
-<div>{{greeting + ' ' + specificName}}</div>
-<input name="Name" #inputName (keypress)="keyupHandler($event, inputName.value)" [value]="initialValue">
-<button>Say hello</button>
-
+<div ui-keypress="{13:'myFunc($event)'}">{{greeting + ' ' + specificName}}</div>
+<input name="Name" #inputName (keypress)="clickHandler($event, inputName.value)" [value]="initialValue">
 <router-outlet></router-outlet>
