@@ -12,8 +12,10 @@ export class AppComponent {
   initialValue = 'World';
 
   keyupHandler(event: KeyboardEvent, name: string): void {
-    console.log(event);
-    this.specificName = name;
+    if (event.key === 'Enter'){
+      // console.log(event);
+      this.specificName = name;
+    }
   }
   // update specific name after Enter key is pressed
 }
