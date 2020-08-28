@@ -1,0 +1,5 @@
+<div>{{greeting + ' ' + specificName}}</div>
+<input name="Name" #inputName (keypress)="keyupHandler($event, inputName.value)" [value]="initialValue">
+<button>Say hello</button>
+
+<router-outlet></router-outlet>
