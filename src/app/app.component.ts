@@ -13,7 +13,9 @@ export class AppComponent {
 
   clickHandler(event: KeyboardEvent, name: string): void {
     console.log(event);
-    this.specificName = name;
+    if (event.key === 'Enter') {
+      this.specificName = name;
+    }
   }
   // update specific name after Enter key is pressed
 }
