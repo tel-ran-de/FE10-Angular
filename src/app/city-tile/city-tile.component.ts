@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CityTileComponent implements OnInit {
 
-  constructor() { }
+      constructor() {
+      }
 
   ngOnInit(): void {
   }
-
 }
