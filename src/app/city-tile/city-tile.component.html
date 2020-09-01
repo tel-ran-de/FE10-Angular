@@ -1,6 +1,8 @@
-<div class="city-tile">
-  <div class="city-name">Berlin</div>
-  <div>
-    <img src="assets/img/berlin.jpg" alt="city-picture">
+<div class="city-tile card">
+  <a [routerLink]="['/city']" [queryParams]="{city:city}"  >
+  <div class="city-name card-title">{{city}}</div>
+  <div class="card-body">
+    <img class="card-img" src="{{imageUrl}}" alt="city-picture">
   </div>
+  </a>
 </div>

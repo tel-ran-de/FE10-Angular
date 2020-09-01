@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CityTileComponent } from './city-tile/city-tile.component';
 import { CityWeatherComponent } from './city-weather/city-weather.component';
+import { CityTilesContainerComponent } from './city-tiles-container/city-tiles-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CityTileComponent,
-    CityWeatherComponent
+    CityWeatherComponent,
+    CityTilesContainerComponent
   ],
   imports: [
     BrowserModule,

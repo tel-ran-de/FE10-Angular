@@ -6,16 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-app';
-  greeting = 'Hello, ';
-  specificName = '';
-  initialValue = 'World';
-
-  keyupHandler(event: KeyboardEvent, name: string): void {
-    console.log(event);
-    if (event.key === 'Enter') {
-      this.specificName = name;
-    }
-  }
-  // some changes
+  title = 'Weather app';
 }
