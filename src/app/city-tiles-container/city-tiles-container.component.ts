@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CityModel} from '../model/CityModel';
+import { CityModel } from '../model/CityModel';
 
 @Component({
   selector: 'app-city-tiles-container',
