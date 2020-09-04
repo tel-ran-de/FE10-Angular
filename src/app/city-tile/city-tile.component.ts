@@ -9,12 +9,22 @@ export class CityTileComponent implements OnInit {
 
   @Input()
   city: string;
+
   @Input()
   imageUrl: string;
 
-  constructor() { }
+  @Input()
+  path: string;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.setPathIfNotEmpty();
+  }
+
+  setPathIfNotEmpty(): void {
+    this.path = this.path ? this.path : 'city/' + this.city;
   }
 
 }

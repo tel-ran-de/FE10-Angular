@@ -10,7 +10,7 @@ const routes: Routes = [
     component: CityTilesContainerComponent
   },
   {
-    path: 'city',
+    path: 'city/:city',
     component: CityWeatherComponent
   },
   {
