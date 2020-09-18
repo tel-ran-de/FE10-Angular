@@ -1,7 +1,9 @@
 <div class="city-tile card">
   <a [routerLink]="[path]">
   <div class="city-name card-title">{{city}}</div>
+
   <div class="card-body">
+    <div class="temp">{{temperature}}</div>
     <img class="card-img" src="{{imageUrl}}" alt="city-picture">
   </div>
   </a>
