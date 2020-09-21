@@ -17,7 +17,7 @@ export class CityTileComponent implements OnInit {
   path: string;
 
   @Input()
-  temperature: number = 0;
+  temperature = 0;
 
   constructor() {
   }
@@ -27,7 +27,7 @@ export class CityTileComponent implements OnInit {
   }
 
   setPathIfNotEmpty(): void {
-    this.path = this.path ? this.path : 'city/' + this.city;
+    this.path = this.path ? this.path : 'name/' + this.city;
   }
 
 }
