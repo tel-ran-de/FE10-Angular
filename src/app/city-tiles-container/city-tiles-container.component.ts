@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CityModel } from '../model/CityModel';
+import {CityService} from '../services/city.service';
 
 @Component({
   selector: 'app-city-tiles-container',
@@ -8,22 +8,12 @@ import { CityModel } from '../model/CityModel';
 })
 export class CityTilesContainerComponent implements OnInit {
 
-  cities: CityModel[] = [
-    {
-      city: 'Berlin',
-      imageUrl: 'assets/img/berlin.jpg'
-    },
-    {
-      city: 'Prague',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Charles_Bridge_-_Prague%2C_Czech_Republic_-_panoramio.jpg',
-    }
-  ];
+  public cities = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private cityService: CityService) {
   }
 
-
-
+  ngOnInit(): void {
+    this.cityService.getCities().subscribe(data => this.cities = data);
+  }
 }
