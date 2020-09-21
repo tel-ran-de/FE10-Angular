@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { CityModel } from '../model/CityModel';
+import {Component, OnInit} from '@angular/core';
+import {CityModel} from '../model/CityModel';
+import {CityService} from '../services/city.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-city-tiles-container',
@@ -8,22 +10,19 @@ import { CityModel } from '../model/CityModel';
 })
 export class CityTilesContainerComponent implements OnInit {
 
-  cities: CityModel[] = [
-    {
-      city: 'Berlin',
-      imageUrl: 'assets/img/berlin.jpg'
-    },
-    {
-      city: 'Prague',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Charles_Bridge_-_Prague%2C_Czech_Republic_-_panoramio.jpg',
-    }
-  ];
+  cities: CityModel[];
+  city: CityModel;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute,
+              private cityService: CityService) {
   }
 
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.cityService.getCities().subscribe(cities =>
+        this.cities = cities);
+    });
+  }
 
 
 }
