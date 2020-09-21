@@ -9,10 +9,16 @@ import {CityDto} from '../dto/CityDto';
 })
 export class CityService {
 
+  cityUrl = 'http://localhost:3000/cities';
+
   constructor(private httpClient: HttpClient) {
   }
 
   getCities(): Observable<CityDto[]> {
-    return this.httpClient.get<CityDto[]>('http://localhost:3000/cities');
+    return this.httpClient.get<CityDto[]>(this.cityUrl);
+  }
+
+  addCity(cityDto: CityDto): Observable<CityDto> {
+    return this.httpClient.post<CityDto>(this.cityUrl, cityDto);
   }
 }

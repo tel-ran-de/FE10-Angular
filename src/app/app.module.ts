@@ -8,7 +8,8 @@ import { CityWeatherComponent } from './city-weather/city-weather.component';
 import { CityTilesContainerComponent } from './city-tiles-container/city-tiles-container.component';
 import { AddCityFormComponent } from './add-city-form/add-city-form.component';
 import { AddCityTileComponent } from './add-city-tile/add-city-tile.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
