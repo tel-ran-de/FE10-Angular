@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {CityModel} from '../model/CityModel';
 import {CityService} from '../services/city.service';
 
 @Component({
@@ -9,7 +8,7 @@ import {CityService} from '../services/city.service';
 })
 export class CityTilesContainerComponent implements OnInit {
 
-  private cities = [];
+  public cities = [];
 
   constructor(private cityService: CityService) {
   }

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {WeatherService} from '../services/weather.service';
 
 @Component({
   selector: 'app-city-tile',
@@ -17,9 +18,9 @@ export class CityTileComponent implements OnInit {
   path: string;
 
   @Input()
-  temperature: number = 0;
+  temperature: number = this.weatherService.getTemperature(this.city);
 
-  constructor() {
+  constructor(private weatherService: WeatherService) {
   }
 
   ngOnInit(): void {
