@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class WeatherService {
 
-  private API_KEY = '';
+  private API_KEY = '7833fe0081beeb67548335c7497c54a2';
 
   constructor(private httpClient: HttpClient) { }
 
