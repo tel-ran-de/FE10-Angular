@@ -20,7 +20,6 @@ export class CityService {
   }
 
   getCitiesByName(cityName: string): Observable<CityDto> {
-    // return this.httpClient.get<CityDto>(this.cityUrl + '?name=' + cityName);
     return this.getCities().pipe(
       map(cities => cities.find(city => city.name === cityName))
     );
@@ -31,7 +30,7 @@ export class CityService {
   }
 
   removeCity(cityName: string): void {
-    this.httpClient.delete(this.cityUrl + '/name/' + cityName).subscribe(data => {
+    this.httpClient.delete(this.cityUrl + '?name=' + cityName).subscribe(data => {
       console.log(data);
     });
   }
