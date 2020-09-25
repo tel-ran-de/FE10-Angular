@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CityDto} from '../dto/CityDto';
 
 @Component({
   selector: 'app-add-city-tile',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCityTileComponent implements OnInit {
 
+  city: CityDto = {
+    name: 'Add new city',
+    imageUrl: 'assets/img/plus.png',
+    id: ''
+  };
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
