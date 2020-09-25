@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CityService} from '../services/city.service';
 import {Router} from '@angular/router';
@@ -10,8 +10,7 @@ import {Router} from '@angular/router';
 })
 export class AddCityFormComponent implements OnInit {
 
-  constructor(private cityService: CityService,
-              private router: Router) {}
+  constructor(private router: Router, private cityService: CityService) { }
 
   form: FormGroup;
 
