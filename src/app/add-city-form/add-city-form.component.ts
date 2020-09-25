@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CityService} from '../services/city.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-city-form',
@@ -9,7 +10,8 @@ import {CityService} from '../services/city.service';
 })
 export class AddCityFormComponent implements OnInit {
 
-  constructor(private cityService: CityService) { }
+  constructor(private cityService: CityService,
+              private router: Router) { }
 
   form: FormGroup;
 
@@ -24,5 +26,6 @@ export class AddCityFormComponent implements OnInit {
   onSubmit(): void {
     console.log(this.form.value);
     this.cityService.addCity(this.form.value).subscribe(value => console.log(value));
+    this.router.navigate(['']);
   }
 }
