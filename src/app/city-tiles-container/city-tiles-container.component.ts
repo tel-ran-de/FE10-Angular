@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CityModel} from '../model/CityModel';
 import {CityService} from '../services/city.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {WeatherService} from '../services/weather.service';
 import {flatMap} from 'rxjs/operators';
 
@@ -20,6 +20,7 @@ export class CityTilesContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      this.cities = [];
       this.cityService.getCities().subscribe(cities => {
         cities.forEach(city => this.weatherService.getWeather(city.name)
           .subscribe(data => this.cities.push(
@@ -34,5 +35,8 @@ export class CityTilesContainerComponent implements OnInit {
 
   removeCity(id: string): void {
     console.log(`This city with ${id} will be removed`);
+    this.cityService.removeCity(id).subscribe((city) =>
+      this.ngOnInit()
+    );
   }
 }
